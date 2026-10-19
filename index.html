@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,67 @@
     <title>Shreya Maske | Cybersecurity Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- WorkConnect screenshot layout -->
+    <style>
+        .workconnect-images {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 16px;
+            width: 100%;
+            align-items: stretch;
+            margin: 18px 0;
+        }
+
+        .workconnect-images > img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            object-fit: contain;
+            object-position: top center;
+            background: #080e19;
+            border: 1px solid #293a54;
+            border-radius: 10px;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        .workconnect-right-images {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 0;
+        }
+
+        .workconnect-right-images img {
+            display: block;
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            object-position: top center;
+            background: #080e19;
+            border: 1px solid #293a54;
+            border-radius: 10px;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 600px) {
+            .workconnect-images {
+                grid-template-columns: 1fr;
+            }
+
+            .workconnect-images > img {
+                height: 400px;
+                min-height: 0;
+            }
+
+            .workconnect-right-images img {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -25,17 +87,14 @@
         </div>
     </nav>
 
-
     <!-- Home Section -->
     <section id="home" class="hero">
-
         <div class="hero-content">
-
             <p class="small-heading">HELLO, I'M</p>
 
             <h1>Shreya Maske</h1>
 
-            <h2>Cybersecurity & Computer Engineering Student</h2>
+            <h2>Cybersecurity &amp; Computer Engineering Student</h2>
 
             <p>
                 I build security-focused applications using Python, Flask,
@@ -43,34 +102,30 @@
             </p>
 
             <div class="hero-buttons">
-    <a href="#projects" class="btn">View Projects</a>
+                <a href="#projects" class="btn">View Projects</a>
 
-    <a href="resume/resume.pdf"
-       target="_blank"
-       class="btn secondary-btn">
-        View Resume
-    </a>
+                <a href="resume/resume.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn secondary-btn">
+                    View Resume
+                </a>
 
-    <a href="#contact" class="btn secondary-btn">
-        Contact Me
-    </a>
-</div>
-
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Me
+                </a>
+            </div>
         </div>
-
     </section>
-
 
     <!-- About Section -->
     <section id="about">
-
         <div class="section-title">
             <p>GET TO KNOW ME</p>
             <h2>About Me</h2>
         </div>
 
         <div class="about-content">
-
             <p>
                 I am a Computer Engineering student interested in
                 cybersecurity, web application security and software
@@ -83,22 +138,17 @@
                 cybersecurity, Python, Flask, web technologies and
                 problem solving.
             </p>
-
         </div>
-
     </section>
-
 
     <!-- Skills Section -->
     <section id="skills">
-
         <div class="section-title">
             <p>WHAT I WORK WITH</p>
             <h2>Skills</h2>
         </div>
 
         <div class="skills-container">
-
             <div class="skill-card">
                 <h3>Programming</h3>
                 <p>C, Python, Java</p>
@@ -118,55 +168,46 @@
                 <h3>Tools</h3>
                 <p>GitHub, VS Code, Android Studio, Linux</p>
             </div>
-
         </div>
-
     </section>
 
-
     <!-- Projects Section -->
-    <section id="projects">
-
+    <section id="projects" class="projects-section">
         <div class="section-title">
-            <p>MY WORK</p>
-            <h2>Projects</h2>
+            <p>WHAT I'VE BUILT</p>
+            <h2>Featured Projects</h2>
+
+            <span class="projects-subtitle">
+                Practical applications built through coding, problem-solving
+                and cybersecurity.
+            </span>
         </div>
 
         <div class="projects-container">
 
-            <div class="project-card">
-
-                <span class="project-number">01</span>
-
-                <h3>Web Application Vulnerability Scanner</h3>
-
-                <p>
-                    A Python-based security tool designed to identify
-                    common web application vulnerabilities and security
-                    weaknesses.
-                </p>
-
-                <div class="project-tech">
-                    <span>Python</span>
-                    <span>Flask</span>
-                    <span>Cybersecurity</span>
+            <!-- Project 1: Security Activity Detector -->
+            <article class="project-card featured-project">
+                <div class="project-card-top">
+                    <span class="project-number">01 / SECURITY</span>
+                    <span class="project-status">Python · Flask</span>
                 </div>
-
-                <a href="#" class="project-link">View Project →</a>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <span class="project-number">02</span>
 
                 <h3>Security Activity Detector</h3>
 
-                <p>
-                    A web-based suspicious activity detection system
-                    developed using Python and Flask.
+                <p class="project-description">
+                    A web-based application that identifies suspicious activity
+                    using the detection checks implemented in Python.
                 </p>
+
+                <div class="project-images">
+                    <img src="images/security-detector-result1.png"
+                         alt="Security Activity Detector result screen"
+                         loading="lazy">
+
+                    <img src="images/security-detector-result2.png"
+                         alt="Security Activity Detector second result screen"
+                         loading="lazy">
+                </div>
 
                 <div class="project-tech">
                     <span>Python</span>
@@ -174,26 +215,37 @@
                     <span>Web Security</span>
                 </div>
 
-                <a
-                    href="https://github.com/truelyshreya-dot/Security-Activity-Detector"
-                    target="_blank"
-                    class="project-link">
-                    GitHub →
+                <a href="https://github.com/truelyshreya-dot/Security-Activity-Detector"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link">
+                    Explore on GitHub <span>↗</span>
                 </a>
+            </article>
 
-            </div>
-
-
-            <div class="project-card">
-
-                <span class="project-number">03</span>
+            <!-- Project 2: Internship Finder -->
+            <article class="project-card">
+                <div class="project-card-top">
+                    <span class="project-number">02 / CAREER</span>
+                    <span class="project-status">Web Application</span>
+                </div>
 
                 <h3>Internship Finder</h3>
 
-                <p>
-                    A web application designed to help students discover
-                    and explore internship opportunities.
+                <p class="project-description">
+                    A student-focused web application designed to help users
+                    discover and explore internship opportunities.
                 </p>
+
+                <div class="project-images">
+                    <img src="images/internship-finder-1.png"
+                         alt="Internship Finder project screenshot"
+                         loading="lazy">
+
+                    <img src="images/internship-finder-2.png"
+                         alt="Internship Finder second screenshot"
+                         loading="lazy">
+                </div>
 
                 <div class="project-tech">
                     <span>HTML</span>
@@ -201,22 +253,44 @@
                     <span>JavaScript</span>
                 </div>
 
-                <a href="#" class="project-link">View Project →</a>
+                <a href="https://github.com/truelyshreya-dot/Internship-Finder-Project"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link">
+                    View Repository <span>↗</span>
+                </a>
+            </article>
 
-            </div>
-
-
-            <div class="project-card">
-
-                <span class="project-number">04</span>
+            <!-- Project 3: WorkConnect -->
+            <article class="project-card">
+                <div class="project-card-top">
+                    <span class="project-number">03 / MARKETPLACE</span>
+                    <span class="project-status">Python · Flask</span>
+                </div>
 
                 <h3>WorkConnect</h3>
 
-                <p>
-                    A service marketplace concept connecting users with
-                    workers such as maids, cooks, drivers and other
-                    service providers.
+                <p class="project-description">
+                    A service marketplace concept connecting people with
+                    maids, cooks, drivers and other service providers.
                 </p>
+
+                <!-- All three screenshots display automatically -->
+                <div class="workconnect-images">
+                    <img src="images/workconnect-1.png"
+                         alt="WorkConnect homepage"
+                         loading="lazy">
+
+                    <div class="workconnect-right-images">
+                        <img src="images/workconnect-2.png"
+                             alt="WorkConnect services page"
+                             loading="lazy">
+
+                        <img src="images/workconnect-3.png"
+                             alt="WorkConnect dashboard"
+                             loading="lazy">
+                    </div>
+                </div>
 
                 <div class="project-tech">
                     <span>Python</span>
@@ -224,104 +298,80 @@
                     <span>MySQL</span>
                 </div>
 
-                <a href="#" class="project-link">View Project →</a>
-
-            </div>
+                <p class="project-link">
+                    Project details coming soon
+                </p>
+            </article>
 
         </div>
-
     </section>
-
 
     <!-- Education Section -->
     <section id="education">
-
         <div class="section-title">
             <p>MY BACKGROUND</p>
             <h2>Education</h2>
         </div>
 
         <div class="education-card">
-
-            <h3>B.Tech – Computer Science & Engineering</h3>
+            <h3>B.Tech – Computer Science &amp; Engineering</h3>
 
             <p class="education-place">
                 JSPM University, Pune
             </p>
 
-            <p>
-                Currently pursuing Third Year B.Tech.
-            </p>
-
+            <p>Currently pursuing Third Year B.Tech.</p>
         </div>
 
-
         <div class="education-card">
-
             <h3>Diploma – Computer Engineering</h3>
 
             <p class="education-place">
                 Government Polytechnic, Hingoli
             </p>
 
-            <p>
-                Diploma in Computer Engineering.
-            </p>
-
+            <p>Diploma in Computer Engineering.</p>
         </div>
-
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact">
-
         <div class="section-title">
             <p>LET'S CONNECT</p>
             <h2>Contact Me</h2>
         </div>
 
         <div class="contact-content">
-
             <p>
                 Interested in cybersecurity, internships, projects or
                 collaboration? Feel free to connect with me.
             </p>
 
-           <div class="contact-links">
+            <div class="contact-links">
+                <a href="https://github.com/truelyshreya-dot"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
 
-    <a href="https://github.com/truelyshreya-dot"
-       target="_blank">
-        GitHub
-    </a>
+                <a href="https://www.linkedin.com/in/shreya-maske-b3723b412/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn
+                </a>
 
-    <a href="https://www.linkedin.com/in/shreya-maske-b3723b412/"
-   target="_blank">
-    LinkedIn
-</a>
-
-    <a href="mailto:truelyshreya@gmail.com">
-    Email
-</a>
-
-</div>
-
+                <a href="mailto:truelyshreya@gmail.com">
+                    Email
+                </a>
+            </div>
         </div>
-
     </section>
-
 
     <!-- Footer -->
     <footer>
-
-        <p>
-            © 2026 Shreya Maske. All Rights Reserved.
-        </p>
-
+        <p>© 2026 Shreya Maske. All Rights Reserved.</p>
     </footer>
 
-
     <script src="script.js"></script>
-
 </body>
 </html>
